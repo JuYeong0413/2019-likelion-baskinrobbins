@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+    <h1>콘에다가 드릴까요, 컵에다가 드릴까요?</h1><br>
+    <div>
+        <a href="../{{ request.GET.size }}?container=cone">
+        <div class="hvrbox">
+        <img src="{% static 'images/sugarcone.png' %}" class="menu hvrbox_layer_bottom"></img>
+        <div class="hvrbox_layer_top">
+            <div class="hvrbox_text">콘에다 주세요</div>
+        </div>
+        </a>
+        </div>
+        
+        <a href="../{{ request.GET.size }}?container=cup">
+        <div class="hvrbox">
+        <img src="{% static 'images/cup.jpg' %}" class="menu hvrbox_layer_bottom"></img>
+        <div class="hvrbox_layer_top">
+            <div class="hvrbox_text">컵에다 주세요</div>
+        </div>
+        </a>
+        </div>
+    </div>
+{% endblock %}

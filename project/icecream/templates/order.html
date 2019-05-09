@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+    <h1>주문 도와드리겠습니다!<br>어떤 걸로 드릴까요?</h1>
+    <h5>* 원하시는 제품을 선택해 주세요.</h5><br>
+    <div>
+    <a href="{% url 'select_container' %}?size=single_regular"><img src="{% static 'images/menu_1.png' %}" class="menu"></img></a>
+    <a href="{% url 'select_container' %}?size=single_king"><img src="{% static 'images/menu_2.png' %}" class="menu"></img></a>
+    <a href="{% url 'select_container' %}?size=double_junior"><img src="{% static 'images/menu_3.png' %}" class="menu"></img></a>
+    <a href="{% url 'select_container' %}?size=double_regular"><img src="{% static 'images/menu_4.png' %}" class="menu"></img></a>
+    <a href="{% url 'pint' %}"><img src="{% static 'images/menu_5.png' %}" class="menu"></img></a>
+    <a href="{% url 'quart' %}"><img src="{% static 'images/menu_6.png' %}" class="menu"></img></a>
+    <a href="{% url 'family' %}"><img src="{% static 'images/menu_7.png' %}" class="menu"></img></a>
+    <a href="{% url 'half_gallon' %}"><img src="{% static 'images/menu_8.png' %}" class="menu"></img></a>
+    </div>
+{% endblock %}

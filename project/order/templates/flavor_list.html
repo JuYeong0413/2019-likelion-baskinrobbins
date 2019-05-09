@@ -1,0 +1,406 @@
+{% load staticfiles %}
+
+
+<div class="container">
+    <input type="submit" class="btn btn-success btn-lg" value="다 골랐어요 !" onclick="return checkValid()" />&nbsp; &nbsp; &nbsp;
+    <button type="button" id="recommendation" class="btn btn-info btn-lg">맛 추천해주세요~</button>
+    <br><br>
+    <div class="row">
+        <div class="card flavor" onclick="check1()">
+                <img src="{% static 'berry_granola.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">베리 그래놀라</h5>
+                <p class="card-text flavor_caption">마스카포네 치즈 아이스크림에 라즈베리와 그래놀라가 쏘옥!</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check1" value="1" name="flavor">
+                    <label class="custom-control-label flavor_caption" for="check1">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check2()">
+                <img src="{% static 'strawberry_avocado.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">스트로베리 아보카도</h5>
+                <p class="card-text flavor_caption">아보카도 아이스크림, 스트로베리 아이스크림에 스트로베리 과육이 쏘옥~</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check2" value="2" name="flavor">
+                    <label class="custom-control-label flavor_caption" for="check2">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check3()">
+                <img src="{% static 'zzeon_tteok.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">쫀떡궁합</h5>
+                <p class="card-text flavor_caption">고소한 흑임자, 인절미 아이스크림에 쫄깃한 떡리본과 바삭한 프랄린 피칸이 쏙쏙!</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check3" value="3" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check3">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check4()">
+                <img src="{% static 'nougat_crunch.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">누가 크런치</h5>
+                <p class="card-text flavor_caption">달콤한 연유와 크런치 아몬드를 토핑한 크리스마스 시즌 플레이버 누가 아이스크림!</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check4" value="4" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check4">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check5()">
+                <img src="{% static 'cafe_bris.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">카페브리즈 아이스크림</h5>
+                <p class="card-text flavor_caption">바삭한 초콜릿 칩과 달콤한 연유 아이스크림이 더해진 아이스크림으로 만나는 마일드한 카페브리즈 커피</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check5" value="5" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check5">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check6()">
+                <img src="{% static 'monster_marshmallow.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">몬스터 마시멜로</h5>
+                <p class="card-text flavor_caption">초코 아몬드와 멀티 컬러 초코칩이 토핑된 카라멜 마시멜로와 토스티드 마시멜로 아이스크림</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check6" value="6" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check6">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check7()">
+                <img src="{% static 'dalgona.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">너는 참 달고나</h5>
+                <p class="card-text flavor_caption">달콤한 카라멜 아이스크림에 바삭한 달고나가 쏘옥~</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check7" value="7" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check7">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check8()">
+                <img src="{% static 'bonjour_macaron.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">봉쥬르, 마카롱</h5>
+                <p class="card-text flavor_caption">부드러운 크림치즈 아이스크림과 마카롱, 초콜릿의 달콤한 만남!</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check8" value="8" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check8">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check9()">
+                <img src="{% static 'twinberry_cheesecake.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">바람과 함께 사라지다</h5>
+                <p class="card-text flavor_caption">블루베리와 딸기로 상큼함을 더한 치즈케이크 한 조각</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check9" value="9" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check9">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check10()">
+                <img src="{% static 'alien.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">엄마는 외계인</h5>
+                <p class="card-text flavor_caption">밀크, 다크, 화이트 세가지 맛 초콜릿에 달콤 바삭 초코볼</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check10" value="10" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check10">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check11()">
+                <img src="{% static 'cotton_candy.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">이상한 나라의 솜사탕</h5>
+                <p class="card-text flavor_caption">부드럽고 달콤한 솜사탕과 함께 떠나는 이상한 나라로의 여행</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check11" value="11" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check11">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check12()">
+                <img src="{% static 'cookies_n_cream.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">쿠키 앤 크림</h5>
+                <p class="card-text flavor_caption">바닐라향 아이스크림에 바삭한 초콜릿 쿠키가 듬뿍 들어있는 제품</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check12" value="12" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check12">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check13()">
+                <img src="{% static 'chocolate_forest.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">초코나무 숲</h5>
+                <p class="card-text flavor_caption">2014년 아이스크림 콘테스트 1위 선정작!</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check13" value="13" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check13">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check14()">
+                <img src="{% static 'yogurt.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">31 요거트</h5>
+                <p class="card-text flavor_caption">유산균이 살아 있는 오리지널 요거트 아이스크림</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check14" value="14" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check14">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check15()">
+                <img src="{% static 'alphonso_mango.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">알폰소 망고</h5>
+                <p class="card-text flavor_caption">알폰소 망고와 유기농 우유의 부드러운 만남</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check15" value="15" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check15">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check16()">
+                <img src="{% static 'pistachio_almond.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">피스타치오 아몬드</h5>
+                <p class="card-text flavor_caption">피스타치오향과 아몬드가 만나 고소함이 두배!</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check16" value="16" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check16">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check17()">
+                <img src="{% static 'walnut.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">월넛</h5>
+                <p class="card-text flavor_caption">고소하고 향긋한 호두 아이스크림에 호두가 듬뿍 들어있는 제품</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check17" value="17" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check17">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check18()">
+                <img src="{% static 'almond_bonbon.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">아몬드 봉봉</h5>
+                <p class="card-text flavor_caption">입안 가득 즐거운 초콜릿, 아몬드로 더욱 달콤하게!</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check18" value="18" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check18">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check19()">
+                <img src="{% static 'lovestruck_strawberry.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">사랑에 빠진 딸기</h5>
+                <p class="card-text flavor_caption">크런치 초콜릿, 치즈 케이크, 스트로베리가 듬뿍 들어있는 아이스크림</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check19" value="19" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check19">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check20()">
+                <img src="{% static 'veryberry_strawberry.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">베리베리 스트로베리</h5>
+                <p class="card-text flavor_caption">새콤상큼 딸기 과육이 듬뿍!</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check20" value="20" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check20">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check21()">
+                <img src="{% static 'mint_chocolate_chip.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">민트 초콜릿 칩</h5>
+                <p class="card-text flavor_caption">쿨한 그녀들의 선택! 상쾌한 민트향에 초코칩까지!</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check21" value="21" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check21">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check22()">
+                <img src="{% static 'shooting_star.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">슈팅스타</h5>
+                <p class="card-text flavor_caption">톡톡 터지는 팝핑 캔디와 스프링클 캔디, 상큼한 체리 시럽이 들어있는 제품</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check22" value="22" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check22">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check23()">
+                <img src="{% static 'love_me.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">러브미</h5>
+                <p class="card-text flavor_caption">부드럽고 상큼한 바닐라향, 스트로베리, 블루베리 아이스크림 안에 색색깔의 롤리팝 캔디가 들어있는 제품</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check23" value="23" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check23">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check24()">
+                <img src="{% static 'rainbow_sherbet.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">레인보우 샤베트</h5>
+                <p class="card-text flavor_caption">상큼한 파인애플, 오렌지, 라즈베리 샤베트</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check24" value="24" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check24">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check25()">
+                <img src="{% static 'popping_banana.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">파핑파핑 바나나</h5>
+                <p class="card-text flavor_caption">달콤상큼 세 가지 맛과 팝핑캔디의 특별한 경험</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check25" value="25" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check25">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check26()">
+                <img src="{% static 'vanilla.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">바닐라</h5>
+                <p class="card-text flavor_caption">부드럽고 깔끔한 바닐라 아이스크림</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check26" value="26" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check26">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check27()">
+                <img src="{% static 'chocolate.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">초콜릿</h5>
+                <p class="card-text flavor_caption">진하고 부드러운 정통 초콜릿 아이스크림</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check27" value="27" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check27">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check28()">
+                <img src="{% static 'newyork_cheesecake.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">뉴욕 치즈케이크</h5>
+                <p class="card-text flavor_caption">부드럽게 즐기는 뉴욕식 정통 치즈케이크 아이스크림</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check28" value="28" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check28">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check29()">
+                <img src="{% static 'greentea.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">그린티</h5>
+                <p class="card-text flavor_caption">엄선된 녹차를 사용한 싱그러운 그린티 아이스크림</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check29" value="29" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check29">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check30()">
+                <img src="{% static 'jamoca_almond_fudge.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">자모카 아몬드 훠지</h5>
+                <p class="card-text flavor_caption">깊고 풍부한 자모카 아이스크림에 고소한 아몬드와 초콜릿 훠지 시럽이 들어있는 제품</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check30" value="30" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check30">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check31()">
+                <img src="{% static 'cherries_jubilee.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">체리쥬빌레</h5>
+                <p class="card-text flavor_caption">체리과육이 탱글탱글 씹히는 체리 아이스크림</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check31" value="31" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check31">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check32()">
+                <img src="{% static 'chocolate_mousse.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">초콜릿 무스</h5>
+                <p class="card-text flavor_caption">초콜릿 칩이 들어있는 진한 초콜릿 아이스크림</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check32" value="32" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check32">선택</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flavor" onclick="check33()">
+                <img src="{% static 'lucky_caramel_turtle.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">럭키 카라멜 터틀</h5>
+                <p class="card-text flavor_caption">무설탕 거북이 모양의 초콜릿이 들어있는 무설탕 바닐라 아이스크림</p>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check33" value="33" name="flavor" onclick="return ValidateSelection();">
+                    <label class="custom-control-label flavor_caption" for="check33">선택</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<button type="button" onclick="topFunction()" id="myBtn">Top</button><br><br>

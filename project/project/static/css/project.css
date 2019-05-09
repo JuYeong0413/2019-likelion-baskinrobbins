@@ -1,0 +1,224 @@
+@font-face {
+    font-family: 'BRBA_B';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/BRBA_B.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'UhBeeZIGLE';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeZIGLE.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'KimNamyun';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KimNamyun.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'UhBeeZIGLE';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeZIGLE.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.navbar-brand {
+    font-size: 22px!important;
+}
+
+h1 {
+    margin-top: 30px;
+    font-family: "BRBA_B";
+}
+
+h5 {
+    font-family: "BRBA_B";
+}
+
+.menu {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 250px;
+}
+
+.menu:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.menu {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.hvrbox,
+.hvrbox * {
+	box-sizing: border-box;
+}
+
+.hvrbox {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	max-width: 100%;
+	height: auto;
+	border-radius: 4px;
+}
+
+.hvrbox img {
+	max-width: 100%;
+}
+
+.hvrbox .hvrbox_layer_bottom {
+	display: block;
+}
+
+.hvrbox .hvrbox_layer_top {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 250px;
+	height: 95%;
+	background: rgba(0, 0, 0, 0.6);
+	color: #fff;
+	padding: 15px;
+	-moz-transition: all 0.4s ease-in-out 0s;
+	-webkit-transition: all 0.4s ease-in-out 0s;
+	-ms-transition: all 0.4s ease-in-out 0s;
+	transition: all 0.4s ease-in-out 0s;
+	border-radius: 4px;
+}
+
+.hvrbox:hover .hvrbox_layer_top,
+.hvrbox.active .hvrbox_layer_top {
+	opacity: 1;
+}
+
+.hvrbox .hvrbox_text {
+	text-align: center;
+	font-size: 30px;
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-moz-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	font-family: "UhBeeZIGLE";
+}
+
+.hvrbox .hvrbox_text_mobile {
+	font-size: 15px;
+	border-top: 1px solid rgb(179, 179, 179); /* for old browsers */
+	border-top: 1px solid rgba(179, 179, 179, 0.7);
+	margin-top: 5px;
+	padding-top: 2px;
+	display: none;
+}
+
+.hvrbox.active .hvrbox_text_mobile {
+	display: block;
+}
+
+.flavor {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 13rem;
+}
+
+.flavor_caption_title {
+    font-family: "BMJUA";
+    font-size: 26px;
+}
+
+.flavor_caption_tag {
+    font-family: "UhBeeZIGLE";
+    font-size: 18px;
+}
+
+.flavor_caption {
+    font-family: "UhBeeZIGLE";
+    font-size: 22px;
+}
+
+.card-header {
+    font-family: "UhBeeZIGLE"!important;
+    font-size: 20px!important;
+}
+
+button, .btn {
+    font-family: "UhBeeZIGLE"!important;
+    font-size: 20px!important;
+}
+
+.flavor_of_the_month {
+    width: auto;
+    height: 688px;
+}
+
+@media ( max-width: 860px ) {
+    .flavor_of_the_month {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.menubtn {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.spoon {
+    display: inline-block;
+    position: absolute;
+}
+
+.flavorlist {
+    margin-right: 0px!important;
+    display: inline-block;
+}
+
+.scrollBtn {
+    display: inline-block;
+    position: absolute;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 999;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #17a2b8;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: gray;
+}
+
+.order_list {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}

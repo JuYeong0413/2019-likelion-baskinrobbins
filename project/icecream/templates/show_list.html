@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+    <h1>모든 주문 내역</h1>
+    <h5>* DB작업을 해주신 갓성원님 감사합니다!</h5>
+    <br>
+    <div class="row container">
+    {% for order in orders %}
+        <div class="card order_list">
+            <div class="card-header text-center">{{ order.size }} {{ order.container }}</div>
+            <div class="card-body">
+                <p class="card-text flavor_caption">
+                    {% for item in order.flavors_as_list %}
+                        {{ item }}<br>
+                    {% endfor %}
+                </p>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+    <button type="button" onclick="topFunction()" id="myBtn">Top</button><br><br>
+{% endblock %}

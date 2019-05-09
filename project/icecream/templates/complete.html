@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+    <h1>주문 내역은 아래와 같습니다.<br>맛있게 드세요!</h1>
+    <h5>* 상단 로고를 누르면 처음으로 돌아갑니다.</h5>
+    <button type="button" id="list" class="btn btn-outline-secondary btn-lg">다른 사람들은 무엇을 골랐을까?</button>
+    <br><br>
+    
+    <div class="row container">
+        <div class="card">
+            <div class="card-header text-center">{{ order.size }} {{ order.container }}</div>
+            <div class="card-body">
+                <p class="card-text flavor_caption">
+                    {% for item in flavors %}
+                        {{ item }}<br>
+                    {% endfor %}
+                </p>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    
+    <script type="text/javascript">
+        document.getElementById("list").onclick = function () {
+            location.href = "{% url 'show_list' %}";
+        }
+    </script>
+{% endblock %}

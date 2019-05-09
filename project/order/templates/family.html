@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+    <h1>어떤 맛으로 드릴까요? 골라주세요!</h1>
+    <h5>* 패밀리 사이즈는 5가지 맛을 고를 수 있습니다.</h5><br>
+    <form action="{% url 'complete' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="size" value="family">
+        <input type="hidden" name="container" value="">
+        <input type="hidden" id="num" name="num" value="5">
+{% include 'flavor_list.html' %}
+    </form>
+    
+    <script type="text/javascript">
+        document.getElementById("recommendation").onclick = function () {
+            location.href = "{% url 'recommendation' %}";
+        };
+        
+        function ValidateSelection() {  
+            var checkboxes = document.getElementsByName("flavor");  
+            var numberOfCheckedItems = 0;  
+            for(var i = 0; i < checkboxes.length; i++)  
+            {  
+                if(checkboxes[i].checked)  
+                    numberOfCheckedItems++;  
+            }  
+            if(numberOfCheckedItems > 5)  
+            {  
+                alert("더 이상 고를 수 없습니다!");  
+                return false;  
+            }  
+        }
+        
+        function checkValid() {
+            var checkboxes = document.getElementsByName("flavor");  
+            var numberOfCheckedItems = 0;  
+            for(var i = 0; i < checkboxes.length; i++)  
+            {  
+                if(checkboxes[i].checked)  
+                    numberOfCheckedItems++;  
+            }  
+            if(numberOfCheckedItems < 5)  
+            {  
+                alert("맛을 선택해 주세요!");  
+                return false;  
+            }
+        }
+    </script>
+{% endblock %}

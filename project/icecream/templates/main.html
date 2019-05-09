@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+    <h1>어서오세요~ 배스킨라빈스입니다!</h1>
+    <br>
+    <div class="menubtn">
+    <button type="button" id="order" class="btn btn-outline-danger btn-lg">아이스크림 주문하고 싶어요 !</button>&nbsp; &nbsp; &nbsp; &nbsp;
+    <br><br>
+    <button type="button" id="flavor_of_the_month" class="btn btn-outline-success btn-lg">이달의 맛이 뭔지 궁금해요 ~</button>&nbsp; &nbsp; &nbsp;
+    <br><br>
+    <button type="button" id="recommendation" class="btn btn-outline-info btn-lg">&nbsp;지난 달 인기 순위 확인하기 !&nbsp;</button>
+    <br><br>
+    <button type="button" id="list" class="btn btn-outline-secondary btn-lg">다른 사람들은 무엇을 골랐을까?</button>
+    </div>
+    <img src="{% static 'images/spoon_1.jpg' %}" class="spoon"></img>
+    
+    <script type="text/javascript">
+        document.getElementById("order").onclick = function () {
+            location.href = "{% url 'order' %}";
+        };
+        
+        document.getElementById("flavor_of_the_month").onclick = function () {
+            location.href = "{% url 'flavor_of_the_month' %}";
+        };
+        
+        document.getElementById("recommendation").onclick = function () {
+            location.href = "{% url 'recommendation' %}";
+        };
+        
+        document.getElementById("list").onclick = function () {
+            location.href = "{% url 'show_list' %}";
+        }
+    </script>
+{% endblock %}

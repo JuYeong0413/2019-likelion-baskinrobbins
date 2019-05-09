@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+<h1>지난 달 인기 순위입니다.</h1><br>
+<div class="row container">
+<button type="button" onclick="topFunction()" id="myBtn">Top</button><br><br>
+        <div class="card flavor">
+            <div class="card-header text-center"><i class='fas fa-crown' style='font-size:16px'></i> 1위 <i class='fas fa-crown' style='font-size:16px'></i></div>
+               <img src="{% static 'strawberry_avocado.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">스트로베리 아보카도</h5>
+                <p class="card-text flavor_caption">아보카도 아이스크림, 스트로베리 아이스크림에 스트로베리 과육이 쏘옥~</p>
+            </div>
+        </div>
+        
+        <div class="card flavor">
+            <div class="card-header text-center">2위</div>
+                <img src="{% static 'alien.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">엄마는 외계인</h5>
+                <p class="card-text flavor_caption">밀크, 다크, 화이트 세가지 맛 초콜릿에 달콤 바삭 초코볼</p>
+            </div>
+        </div>
+        
+        <div class="card flavor">
+            <div class="card-header text-center">3위</div>
+                 <img src="{% static 'cookies_n_cream.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">쿠키 앤 크림</h5>
+                <p class="card-text flavor_caption">바닐라향 아이스크림에 바삭한 초콜릿 쿠키가 듬뿍 들어있는 제품</p>
+            </div>
+        </div>
+        
+        <div class="card flavor">
+            <div class="card-header text-center">4위</div>
+                 <img src="{% static 'chocolate.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">초콜릿</h5>
+                <p class="card-text flavor_caption">진하고 부드러운 정통 초콜릿 아이스크림</p>
+            </div>
+        </div>
+        
+        <div class="card flavor">
+            <div class="card-header text-center">5위</div>
+                <img src="{% static 'cherries_jubilee.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">체리쥬빌레</h5>
+                <p class="card-text flavor_caption">체리과육이 탱글탱글 씹히는 체리 아이스크림</p>
+            </div>
+        </div>
+        
+        <div class="card flavor">
+            <div class="card-header text-center">6위</div>
+                <img src="{% static 'almond_bonbon.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">아몬드 봉봉</h5>
+                <p class="card-text flavor_caption">입안 가득 즐거운 초콜릿, 아몬드로 더욱 달콤하게!</p>
+            </div>
+        </div>
+        
+        <div class="card flavor">
+            <div class="card-header text-center">7위</div>
+                <img src="{% static 'veryberry_strawberry.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">베리베리 스트로베리</h5>
+                <p class="card-text flavor_caption">새콤상큼 딸기 과육이 듬뿍!</p>
+            </div>
+        </div>
+        
+        <div class="card flavor">
+            <div class="card-header text-center">8위</div>
+                <img src="{% static 'cotton_candy.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">이상한 나라의 솜사탕</h5>
+                <p class="card-text flavor_caption">부드럽고 달콤한 솜사탕과 함께 떠나는 이상한 나라로의 여행</p>
+            </div>
+        </div>
+        
+        <div class="card flavor">
+            <div class="card-header text-center">9위</div>
+                <img src="{% static 'berry_granola.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">베리 그래놀라</h5>
+                <p class="card-text flavor_caption">마스카포네 치즈 아이스크림에 라즈베리와 그래놀라가 쏘옥!</p>
+            </div>
+        </div>
+        
+        <div class="card flavor">
+            <div class="card-header text-center">10위</div>
+                <img src="{% static 'mint_chocolate_chip.png' %}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title flavor_caption_title">민트 초콜릿 칩</h5>
+                <p class="card-text flavor_caption">쿨한 그녀들의 선택! 상쾌한 민트향에 초코칩까지!</p>
+            </div>
+        </div>
+</div>
+{% endblock %}
